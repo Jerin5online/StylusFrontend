@@ -1,0 +1,27 @@
+<div id="bglogin" class="vh-100">
+
+  <div  class="container justify-content-center align-items-center d-flex" >
+    <div class=" row shadow  w-75 border border-light rounded" style="margin-top: 8em;" >
+        <div class="reg-bg col-md-6 " >
+            <h1  class="mt-5 me-3 fw-bold text-light text-center" style="font-family: Kaushan Script, cursive;"><i class="fa-brands fa-shopify mt-4 me-2 "></i>Ali-Stylee</h1>
+            <h2 class="text-center mt-3 text-dark">Already Have An Account...</h2>
+            <p class="text-center mt-3 fw-bold">Lorem ipsum dolor sit amet consectetur adipisicing elit. Et illum assumenda repellat voluptate ipsa iste, nesciunt excepturi minima officiis repudiandae quod perferendis temporibus totam est vel rerum, quia neque delectus!</p>
+           <a routerLink="/user/login"><h2 class="text-center"> <button class="btn btn-dark w-50">SIGN IN</button></h2></a>
+        </div>
+        <div class="col-md-6 d-flex justify-content-center align-items-center flex-column">
+            <h1 class="text-info mt-5"><i class="fa-solid fa-users text-light"></i></h1>
+            <h3 class="mb-2" style="font-family: Kaushan Script, cursive;">JOIN WITH US</h3>
+
+            <form (ngSubmit)="register()" [formGroup]="registerForm">
+                <input type="text" placeholder="Username" class="form-control mb-3"  formControlName="username" name="uname">
+                <span *ngIf="registerForm.get('username')?.errors && registerForm.get('username')?.touched " class="text-danger">invalid username</span>
+                <input type="text" placeholder="Email Address" class="form-control"  formControlName="email" name="uemail">
+                <span *ngIf="registerForm.get('email')?.errors && registerForm.get('email')?.touched " class="text-danger">invalid email</span>
+                <input type="password" placeholder="Password" class="form-control mt-3" formControlName="password" name="upswd">
+                <span *ngIf="registerForm.get('password')?.errors && registerForm.get('password')?.touched " class="text-danger">invalid password</span>
+                <button type="submit" class="btn btn-danger mt-3 mb-5 w-100">Register</button>
+            </form>
+        </div>
+    </div>
+  </div>
+</div>

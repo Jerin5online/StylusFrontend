@@ -1,0 +1,40 @@
+<div id="bglogin" class="vh-100">
+    <div  class="container justify-content-center align-items-center d-flex">
+        <div class=" row shadow w-75 border border-light rounded " style="margin-top: 8em;">
+            <div class="login-bg col-md-6 rounded ">
+                <h1  class="me-3 fw-bold text-light text-center mt-5" style="font-family: Kaushan Script, cursive;"><i class="fa-brands fa-shopify me-2 "></i>Ali-Stylee</h1>
+                <h3 class="text-center text-dark"><br><br>Dont Have An Account?</h3>
+                <p class="text-center mt-3" style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Et illum assumenda repellat voluptate ipsa iste, nesciunt excepturi minima officiis repudiandae quod perferendis temporibus totam est vel rerum, quia neque delectus!</p>
+            <a routerLink="/user/register" ><h2 class="text-center mb-5 "> <button class="btn btn-dark w-50">SIGN UP</button></h2></a>
+            </div>
+            <!-- <div class="col-md-6 d-flex justify-content-center align-items-center flex-column">
+                <h1 class="text-white"><i class="fa-regular fa-circle-user"></i></h1>
+                <h3 class="mb-3" style="font-family: Kaushan Script, cursive;">Welcome User</h3>
+                <input type="text" placeholder="Email Address" class="form-control" id="">
+                <input type="password" placeholder="Password" class="form-control mt-3" id="">
+                <button class="btn btn-success text-black mt-3 mb-2 w-100">Login</button>
+            </div> -->
+            <!-- <form (ngSubmit)="login()" [formGroup]="loginForm">
+                <input type="text" placeholder="Email Address" class="form-control"  formControlName="email" name="uemail">
+                <span *ngIf="loginForm.get('email')?.errors && loginForm.get('email')?.touched " class="text-danger">invalid email</span>
+                <input type="password" placeholder="Password" class="form-control mt-3" formControlName="password" name="upswd">
+                <span *ngIf="loginForm.get('password')?.errors && loginForm.get('password')?.touched " class="text-danger">invalid password</span>
+                <button type="submit" class="btn btn-success mt-3 mb-5 w-100">Login</button>
+            </form> -->
+           
+           
+            <div class="col-md-6 d-flex justify-content-center align-items-center flex-column">
+                <h1 class="text-info mt-5"><i class="fa-solid fa-users text-light"></i></h1>
+                <h3 class="mb-2" style="font-family: Kaushan Script, cursive;">JOIN WITH US</h3>
+    
+                <form (ngSubmit)="login()" [formGroup]="loginForm">
+                    <input type="text" placeholder="Email Address" class="form-control"  formControlName="email" name="uemail">
+                    <span *ngIf="loginForm.get('email')?.errors && loginForm.get('email')?.touched " class="text-danger">invalid email</span>
+                    <input type="password" placeholder="Password" class="form-control mt-3" formControlName="password" name="upswd">
+                    <span *ngIf="loginForm.get('password')?.errors && loginForm.get('password')?.touched " class="text-danger">invalid password</span>
+                    <button type="submit" class="btn btn-success mt-3 mb-5 w-100">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
