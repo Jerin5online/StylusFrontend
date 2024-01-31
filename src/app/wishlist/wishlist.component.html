@@ -1,30 +1,30 @@
-<div class="d-flex justify-content-center align-items-center flex-column">
+<div *ngIf=" (allProducts.length==0)" class="d-flex justify-content-center align-items-center flex-column">
               <img class="mt-5" height="300px" width="300px"  src="https://img.freepik.com/free-vector/purple-tote-bag-cartoon-sticker_1308-71763.jpg?size=626&ext=jpg&uid=R132240054&ga=GA1.1.452856762.1691294994&semt=ais" alt="">
               <h3><span class="text-danger" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Wishlist</span> is <span class="text-danger" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Empty</span></h3>
           </div>
-          <div>
+          <div *ngIf="!(allProducts.length==0)">
               <section class="py-5">
                   <h2 class="text-center">Your wishlist</h2>
               
                   <div class="container px-4 px-lg-5 mt-5">
                       <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-                          <div class="col mb-5">
+                          <div class="col mb-5" *ngFor="let product of allProducts">
                               <div class="card h-100">
                                   <!-- Product image-->
-                                  <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                                  <img class="card-img-top" [src]="product.image" alt="..." />
                                   <!-- Product details-->
                                   <div class="card-body p-4">
                                       <div class="text-center">
                                           <!-- Product name-->
-                                          <h5 class="fw-bolder">Fancy Product</h5>
+                                          <h5 class="fw-bolder">{{product.title.slice(0.20)}}...</h5>
                                           <!-- Product price-->
-                                          $40.00 - $80.00
+                                         ${{product.price}}
                                       </div>
                                   </div>
                                   <!-- Product actions-->
                                   <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                      <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">View options</a></div>
-                                  </div>
+                                    <div (click)="removeItem(product._id)" class="text-center"><a class="btn btn-outline-danger mt-auto" (click)="removeItem(product._id)">WishList</a></div>
+                                    <div  class="text-center"><a class="btn btn-outline-success mt-2">Cart</a></div>                                  </div>
                               </div>
                           </div>
                          

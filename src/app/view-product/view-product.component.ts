@@ -24,9 +24,8 @@ ngOnInit(): void {
 getproduct(id:any){
 this.api.getaproductapi(id).subscribe({
   next:(res:any)=>{
-    console.log(res);
-    
-this.product[0]
+
+this.product=res[0]
 console.log(this.product);
     
   },
@@ -38,13 +37,27 @@ console.log(this.product);
 
 }
 addtoWishlist(product:any){
-  if (localStorage.getItem("token")) {
-    alert("procced")
-    Swal.fire({
-      icon: 'error',
-      title: 'Success...',
-      text: 'Procced',
-    });  
+  if (sessionStorage.getItem("token")) {
+    this.api.addtowishlistapi(product).subscribe({
+      next: (res:any) => {
+console.log(res);
+       Swal.fire({
+                  icon: 'success',
+                   title: 'product added to wishlist successfully',
+                    text: 'Wow...',
+                 }); 
+     },
+     error: (err: any) => {
+       console.log(err);
+       Swal.fire({
+         icon: 'error',
+          title: 'Opps',
+           text: `${err.error}`,
+       
+        });        
+       }   
+   });  
+     
   }else{
     Swal.fire({
       icon: 'error',
@@ -56,6 +69,7 @@ addtoWishlist(product:any){
   
   addToCart(product:any){
     if (localStorage.getItem("token")) {
+      alert("procced")
       Swal.fire({
         icon: 'error',
         title: 'Procced',
